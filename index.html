@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script referrerpolicy="no-referrer-when-downgrade" src="https://dev.visualwebsiteoptimizer.com/cloud-run-test/final/29000586.js" id="vwoCode"></script>
+   <script referrerpolicy="no-referrer-when-downgrade" src="https://dev.visualwebsiteoptimizer.com/cloud-run-test/final/29000586.js" id="vwoCode"></script>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Element Available After 2 Seconds</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Element Added After 2 Seconds</title>
 
   <style>
     body {
@@ -12,29 +12,31 @@
       padding: 40px;
     }
 
-    #delayed-element {
+    .dynamic-box {
       padding: 20px;
       background: #d4f5d4;
       border: 1px solid #4caf50;
       margin-top: 20px;
-      display: none;
     }
   </style>
 </head>
 <body>
 
-  <h1>Delayed Element Example</h1>
+  <h1>Dynamic DOM Injection Example</h1>
 
-  <p>Element will appear after 2 seconds...</p>
-
-  <div id="delayed-element">
-    ✅ Element is now available after 2 seconds
-  </div>
+  <p>Element will be added to DOM after 2 seconds...</p>
 
   <script>
     setTimeout(() => {
-      document.getElementById("delayed-element").style.display = "block";
-      console.log("Element is now available");
+      const div = document.createElement("div");
+
+      div.id = "delayed-element";
+      div.className = "dynamic-box";
+      div.innerHTML = "✅ Element added to DOM after 2 seconds";
+
+      document.body.appendChild(div);
+
+      console.log("Element added to DOM");
     }, 2000);
   </script>
 
