@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script referrerpolicy="no-referrer-when-downgrade" src="https://dev.visualwebsiteoptimizer.com/cloud-run-test/final/29000586.js" id="vwoCode"></script>
+     <script referrerpolicy="no-referrer-when-downgrade" src="https://dev.visualwebsiteoptimizer.com/cloud-run-test/final/29000565.js" id="vwoCode"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Multiple Dynamic Elements</title>
+  <title>Two Elements Added After 2 Seconds</title>
 
   <style>
     body {
@@ -34,36 +34,29 @@
 
   <h1>Dynamic DOM Injection Example</h1>
 
-  <p>
-    Element 1 will be added after 2 seconds.<br />
-    Element 2 will be added after 4 seconds.
-  </p>
+  <p>Both elements will be added to DOM after 2 seconds.</p>
 
   <script>
-    // Element 1 after 2 sec
     setTimeout(() => {
-      const div1 = document.createElement("div");
 
+      // Element 1
+      const div1 = document.createElement("div");
       div1.id = "element-1";
       div1.className = "dynamic-box";
-      div1.innerHTML = "✅ Element 1 added to DOM after 2 seconds";
+      div1.innerHTML = "✅ Element 1 added after 2 seconds";
 
-      document.body.appendChild(div1);
-
-      console.log("Element 1 added");
-    }, 2000);
-
-    // Element 2 after 4 sec
-    setTimeout(() => {
+      // Element 2
       const div2 = document.createElement("div");
-
       div2.id = "element-2";
       div2.className = "dynamic-box";
-      div2.innerHTML = "🚀 Element 2 added to DOM after 4 seconds";
+      div2.innerHTML = "🚀 Element 2 added after 2 seconds";
 
+      // Append both to DOM
+      document.body.appendChild(div1);
       document.body.appendChild(div2);
 
-      console.log("Element 2 added");
+      console.log("Both elements added to DOM");
+
     }, 2000);
   </script>
 
