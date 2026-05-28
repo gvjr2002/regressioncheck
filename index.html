@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <script referrerpolicy="no-referrer-when-downgrade" src="https://dev.visualwebsiteoptimizer.com/cloud-run-test/final/29000586.js" id="vwoCode"></script>
+    <script referrerpolicy="no-referrer-when-downgrade" src="https://dev.visualwebsiteoptimizer.com/cloud-run-test/final/29000586.js" id="vwoCode"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Element Added After 2 Seconds</title>
+  <title>Multiple Dynamic Elements</title>
 
   <style>
     body {
@@ -14,9 +14,19 @@
 
     .dynamic-box {
       padding: 20px;
+      margin-top: 20px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    #element-1 {
       background: #d4f5d4;
       border: 1px solid #4caf50;
-      margin-top: 20px;
+    }
+
+    #element-2 {
+      background: #dbeafe;
+      border: 1px solid #3b82f6;
     }
   </style>
 </head>
@@ -24,19 +34,36 @@
 
   <h1>Dynamic DOM Injection Example</h1>
 
-  <p>Element will be added to DOM after 2 seconds...</p>
+  <p>
+    Element 1 will be added after 2 seconds.<br />
+    Element 2 will be added after 4 seconds.
+  </p>
 
   <script>
+    // Element 1 after 2 sec
     setTimeout(() => {
-      const div = document.createElement("div");
+      const div1 = document.createElement("div");
 
-      div.id = "delayed-element";
-      div.className = "dynamic-box";
-      div.innerHTML = "✅ Element added to DOM after 2 seconds";
+      div1.id = "element-1";
+      div1.className = "dynamic-box";
+      div1.innerHTML = "✅ Element 1 added to DOM after 2 seconds";
 
-      document.body.appendChild(div);
+      document.body.appendChild(div1);
 
-      console.log("Element added to DOM");
+      console.log("Element 1 added");
+    }, 2000);
+
+    // Element 2 after 4 sec
+    setTimeout(() => {
+      const div2 = document.createElement("div");
+
+      div2.id = "element-2";
+      div2.className = "dynamic-box";
+      div2.innerHTML = "🚀 Element 2 added to DOM after 4 seconds";
+
+      document.body.appendChild(div2);
+
+      console.log("Element 2 added");
     }, 2000);
   </script>
 
